@@ -1,10 +1,10 @@
 import './App.css';
+import Header from './Pages/Common/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1>This first</h1>
-      <button class="btn w-64 rounded-full">Button</button>
+      <Header></Header>
     </div>
   );
 }
