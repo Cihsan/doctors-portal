@@ -6,6 +6,7 @@ import Appointment from './Pages/Appointment/Appointment';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import Register from './Pages/Login/Register';
 import Review from './Pages/Review/Review';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/reviews'element={<Review/>}></Route>
         <Route path='/contact'element={<Contact/>}></Route>
         <Route path='/login'element={<Login/>}></Route>
+        <Route path='/register'element={<Register/>}></Route>
       </Routes>
     </div>
   );

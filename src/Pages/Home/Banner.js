@@ -1,9 +1,14 @@
 import React from 'react';
 import chair from '../../assets/images/chair.png';
 import CardMini from './CardMini';
+import bg from '../../assets/images/bg.png';
+
 const Banner = () => {
     return (
-        <div>
+        <div style={{
+            background:`url(${bg})`,
+            backgroundSize:'cover'
+        }}>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={chair} className="md:max-w-lg rounded-lg shadow-2xl" alt="" />

@@ -1,9 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import bg from '../assets/images/footer.png';
 
 const Footer = () => {
     return (
-        <div>
+        <div style={{
+            background:`url(${bg})`,
+            backgroundSize:'cover'
+            
+        }}>
             <footer class="footer p-10 text-neutral-content text-accent">
                 <div>
                     <span class="footer-title">Services</span>

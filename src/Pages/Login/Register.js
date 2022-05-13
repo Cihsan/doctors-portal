@@ -1,26 +1,28 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import auth from '../../../src/firebase_init';
-const Login = () => {
-    const [emailPassLogin,/*  emailPassLoginUser, emailPassLoginLoading, emailPassLoginError */] = useSignInWithEmailAndPassword(auth);
-    const [loginGoogle, /* userLoginGoogle, loadingLoginGoogle, errLoginGoogle */] = useSignInWithGoogle(auth);
+
+const Register = () => {
     const navigate = useNavigate()
 
-    console.log(emailPassLogin);
-    const login = (event) => {
+    const register = (event) => {
         event.preventDefault()
         const email = event.target.email.value
         const pass = event.target.pass.value
-        emailPassLogin(email, pass)
+        //(email,pass)
         console.log(email, pass);
     }
     return (
         <div>
             <div className="hero min-h-screen">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <h1 className='text-center text-3xl'>Login</h1>
-                    <form onSubmit={login} className="card-body">
+                    <h1 className='text-center text-3xl'>Register</h1>
+                    <form onSubmit={register} className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -32,29 +34,26 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='pass' placeholder="password" className="input input-bordered" required />
-                            <label className="label">
-                                <button className="label-text-alt link link-hover">Forgot password?</button>
-                            </label>
-                            
+
+
                         </div>
                         <div className="form-control mt-2">
-                            <button type='submit' className="btn btn-accent">Login</button>
+                            {/* <input className="btn btn-accent" type="submit" value="Login" /> */}
+                            <button type='submit' className="btn btn-accent">Register</button>
                         </div>
                         <div class="flex flex-col w-full border-opacity-50">
                             <div class="divider">OR</div>
                             <div class="grid h-5 rounded-box place-items-center">
-                            <label className="label">
-                                <button onClick={() => navigate('/register')} className="label-text-alt link link-hover">New to Doctors Portal?</button>
-                            </label>
-                                <button onClick={() => loginGoogle()} className='btn btn-secondary my-2 mb-5 mx-10'>Login with Google</button>
+                            <span><button onClick={() => navigate('/login')} className="label-text-alt link">Are You User Doctors Portal?</button></span>
                             </div>
                         </div>
+                       
                     </form>
-
+                    {/* <button onClick={() => loginGoogle()} className='btn btn-secondary my-2 mx-10'>Login with Google</button> */}
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;

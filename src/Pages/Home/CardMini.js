@@ -6,8 +6,8 @@ import phone from '../../assets/icons/phone.svg';
 
 const cardMini = () => {
     return (
-       <div className='mx-5'>
-            <div className='grid md:grid-cols-3 gap-4 text-white'>
+       <div>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-white'>
             <CardMiniInfo title='Opening Hours' text='text' bg="bg-gradient-to-r from-secondary to-primary" pic={clock}></CardMiniInfo>
             <CardMiniInfo title='Our location' text='text' bg="bg-accent" pic={marker}></CardMiniInfo>
             <CardMiniInfo title='Contact us now' text='text' bg="bg-gradient-to-r from-secondary to-primary" pic={phone}></CardMiniInfo>
