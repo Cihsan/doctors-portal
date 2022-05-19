@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import Modal from './Modal';
 
 const TimeSet = ({ date, setdate }) => {
-    const [open,setOpen]=useState(null)
+    const [open, setOpen] = useState(null)
     const [services, setservice] = useState([])
     useEffect(() => {
+        //  fetch('http://localhost:5000/services')
         fetch('service.json')
             .then(res => res.json())
             .then(data => setservice(data))
@@ -22,14 +23,14 @@ const TimeSet = ({ date, setdate }) => {
                                 <p>
                                     {
                                         service?.slots?.length > 0
-                                        ?<span>{service.slots[0]}</span>
-                                        :<span className='text-red-500'>No Available Slots</span>
+                                            ? <span>{service.slots[0]}</span>
+                                            : <span className='text-red-500'>No Available Slots</span>
                                     }
                                 </p>
-                                <p>{service.slots.length } {service.slots.length> 1 ?'SPACES':'SPACE'}  AVAILABLE</p>
-                                <label onClick={()=>setOpen(service)} 
-                                disabled={service.slots.length===0} 
-                                 for="my-modal-6" class="btn btn-primary">Book Appointment</label>
+                                <p>{service.slots.length} {service.slots.length > 1 ? 'SPACES' : 'SPACE'}  AVAILABLE</p>
+                                <label onClick={() => setOpen(service)}
+                                    disabled={service.slots.length === 0}
+                                    htmlFor="my-modal-6" class="btn btn-primary">Book Appointment</label>
                             </div>
                             {open && <Modal date={date} open={open} setOpen={setOpen}></Modal>}
                         </div>

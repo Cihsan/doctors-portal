@@ -12,6 +12,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 * tailwind Daisy Use
+* use react-hook-form (easy to handle form no to preventdefault ) 
 
 * Home>banner>cardMIni>cardMIniInfo
 * Home>Service>Services
